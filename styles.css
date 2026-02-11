@@ -1,0 +1,67 @@
+body {
+  font-family: Arial;
+  background: #f5f7fb;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  background: #2b6ef2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+input, select {
+  display: block;
+  margin: 10px 0;
+  padding: 6px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.error {
+  color: red;
+}
+.subject-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.subject-row label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.subject-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.action-row {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
