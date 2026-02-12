@@ -28,7 +28,6 @@ export default function App() {
   useEffect(() => localStorage.setItem("courses", JSON.stringify(courses)), [courses]);
   useEffect(() => localStorage.setItem("batches", JSON.stringify(batches)), [batches]);
   useEffect(() => localStorage.setItem("students", JSON.stringify(students)), [students]);
-
   /* ================= SUBJECT ================= */
 
   const addSubject = () => {
@@ -240,12 +239,24 @@ export default function App() {
         ))}
 
       {page === "courses" &&
-        courses.map(c => (
-          <div key={c.name} className="card">
-            {c.name} → {c.subjects.join(", ")}
-            <button onClick={() => deleteCourse(c.name)}>Delete</button>
-          </div>
-        ))}
+        <div className="course-table">
+        <div className="course-header">
+          <span>Course Name</span>
+          <span>Subjects</span>
+          <span>Actions</span>
+        </div>
+      {courses.map(course => (
+        <div key={course.name} className="course-row">
+          <span>{course.name}</span>
+          <span>{course.subjects.join(", ")}</span>
+          <span>
+        <button className="danger-btn" onClick={() => deleteCourse(course.name)}
+        >Delete</button>
+          </span>
+        </div>
+      ))}
+      </div>
+      }
 
       {page === "batches" &&
         batches.map(b => (
@@ -256,11 +267,21 @@ export default function App() {
         ))}
 
       {page === "students" &&
-        students.map((s, i) => (
-          <div key={i} className="card">
-            {s.name} → {s.course} → {s.batch}
-          </div>
+        <div className="student-table">
+        <div className="student-header">
+          <span>Name</span>
+          <span>Course</span>
+          <span>Batch</span>
+        </div>
+        {students.map((s, i) => (
+        <div key={i} className="student-row">
+          <span>{s.name}</span>
+          <span>{s.course}</span>
+          <span>{s.batch}</span>
+        </div>
         ))}
-    </div>
+        </div>
+        }
+       </div>
   );
 }

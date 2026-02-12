@@ -1,67 +1,170 @@
 body {
-  font-family: Arial;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
   background: #f5f7fb;
+  overflow-y: auto; 
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  background: white;
-  padding: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  background: rgb(228, 213, 235);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  min-height: 100%;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 button {
   margin: 5px;
-  padding: 8px 12px;
-  background: #2b6ef2;
+  padding: 8px 14px;
+  background: #a22bf2;
   color: white;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-input, select {
-  display: block;
-  margin: 10px 0;
-  padding: 6px;
-  width: 100%;
+input {
+  width: 97%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .card {
   background: #fff;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.student-table {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
   border: 1px solid #ddd;
 }
 
-.grid {
+.student-header,
+.student-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+.student-header {
+  background: #a22bf2;
+  color: white;
+  font-weight: bold;
+}
+
+.student-row {
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.student-row:nth-child(even) {
+  background: #f9fafc;
+}
+.course-table {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.course-header,
+.course-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 120px;
+  padding: 10px;
+  align-items: center;
+}
+
+.course-header {
+  background: #a22bf2;
+  color: white;
+  font-weight: bold;
+}
+
+.course-row {
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.course-row:nth-child(even) {
+  background: #f9fafc;
+}
+
+.danger-btn {
+  background: #ef4444;
+}
+
+/* Dark mode support */
+
+body.dark .course-table {
+  border-color: #374151;
+}
+
+body.dark .table-row {
+  background: #1f2933;
+  border-color: #374151;
+}
+
+body.dark .table-row:nth-child(even) {
+  background: #111827;
+}
+
+/* Dark mode support */
+
+body.dark .student-table {
+  border-color: #374151;
+}
+
+body.dark .table-row {
+  background: #1f2933;
+  border-color: #374151;
+}
+
+body.dark .table-row:nth-child(even) {
+  background: #111827;
+}
+
+
+.action-row {
+  margin-top: 12px;
+}
+
+.list-card {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+body.dark .list-card {
+  background: #1f2933;
+  border-color: #374151;
 }
 
 .error {
-  color: red;
-}
-.subject-row {
-  display: flex;
-  align-items: center;
-  padding: 6px 0;
+  color: #ef4444;
 }
 
-.subject-row label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+.theme-toggle {
+  background: #111;
 }
 
-.subject-row input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-}
-
-.action-row {
-  margin-top: 15px;
-  display: flex;
-  justify-content: flex-start;
+body.dark .theme-toggle {
+  background: #e5e7eb;
+  color: black;
 }
