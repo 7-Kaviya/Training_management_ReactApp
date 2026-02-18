@@ -108,37 +108,6 @@ input {
   background: #ef4444;
 }
 
-/* Dark mode support */
-
-body.dark .course-table {
-  border-color: #374151;
-}
-
-body.dark .table-row {
-  background: #1f2933;
-  border-color: #374151;
-}
-
-body.dark .table-row:nth-child(even) {
-  background: #111827;
-}
-
-/* Dark mode support */
-
-body.dark .student-table {
-  border-color: #374151;
-}
-
-body.dark .table-row {
-  background: #1f2933;
-  border-color: #374151;
-}
-
-body.dark .table-row:nth-child(even) {
-  background: #111827;
-}
-
-
 .action-row {
   margin-top: 12px;
 }
@@ -150,10 +119,17 @@ body.dark .table-row:nth-child(even) {
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+.subject-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+}
 
-body.dark .list-card {
-  background: #1f2933;
-  border-color: #374151;
+.subject-row input {
+  width: auto;
+  margin: 0;
 }
 
 .error {
@@ -163,8 +139,49 @@ body.dark .list-card {
 .theme-toggle {
   background: #111;
 }
+/* DARK MODE */
+
+body.dark {
+  background: #282a2e;
+  color: #e5e7eb;
+}
+
+body.dark .container {
+  background: #111827;
+  box-shadow: none;
+}
+
+body.dark .card {
+  background: #1f2933;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+body.dark input,
+body.dark select {
+  background: #0f172a;
+  color: white;
+  border: 1px solid #374151;
+}
+
+body.dark button {
+  background: #7c3aed;
+}
+
+body.dark .student-header,
+body.dark .course-header {
+  background: #7c3aed;
+}
 
 body.dark .theme-toggle {
-  background: #e5e7eb;
+  background: white;
   color: black;
+}
+body.dark .course-row,
+body.dark .student-row  {
+  background: #1f2933;
+  color: #e5e7eb;
+}
+body.dark .danger-btn {
+  background: #ef4444;
 }

@@ -23,11 +23,20 @@ export default function App() {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [error, setError] = useState("");
+  const [darkMode, setDarkMode] = useState(
+  localStorage.getItem("darkMode") === "true"
+);
+
 
   useEffect(() => localStorage.setItem("subjects", JSON.stringify(subjects)), [subjects]);
   useEffect(() => localStorage.setItem("courses", JSON.stringify(courses)), [courses]);
   useEffect(() => localStorage.setItem("batches", JSON.stringify(batches)), [batches]);
   useEffect(() => localStorage.setItem("students", JSON.stringify(students)), [students]);
+  useEffect(() => {
+  document.body.classList.toggle("dark", darkMode);
+  localStorage.setItem("darkMode", darkMode);
+}, [darkMode]);
+
   /* ================= SUBJECT ================= */
 
   const addSubject = () => {
@@ -140,6 +149,9 @@ export default function App() {
   return (
     <div className="container">
       <h1>Training Management System</h1>
+      <button className="theme-toggle" onClick={() => setDarkMode(prev => !prev)}>
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
 
       <nav>
         {["dashboard", "subjects", "courses", "batches", "students"].map(p => (
